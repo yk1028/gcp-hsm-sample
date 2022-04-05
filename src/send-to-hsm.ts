@@ -7,14 +7,14 @@ import * as keyInfo from '../.key-info.json';
 
 const terra = new LCDClient({
 	URL: 'https://bombay-lcd.terra.dev',
-	chainID: 'bombay-12'
+	chainID: 'bombay-12',
+	gasPrices: { uluna: 0.01133 }
 });
 
 const sendToHsm = async () => {
 	const mnemonicKey = new MnemonicKey({
 		mnemonic: keyInfo.mnemonic
 	})
-
 
 	// GCP HSM
 	const kms = new KeyManagementServiceClient();

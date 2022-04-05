@@ -10,7 +10,7 @@ const terra = new LCDClient({
 	chainID: 'bombay-12'
 });
 
-const sendLuna = async () => {
+const printPubkey = async () => {
 
 	// GCP HSM
 	const kms = new KeyManagementServiceClient();
@@ -24,12 +24,9 @@ const sendLuna = async () => {
 	const gcpHsmUtils = new GcpHsmSigner(kms, versionName);
 	const pubkey = await gcpHsmUtils.getPublicKey();
 	const gcpHsmKey: Key = new GcpHsmKey(gcpHsmUtils, pubkey);
-
-	console.log(`GCP HSM pub key: ${gcpHsmKey.publicKey}`);
-
 	const gcpHsmWallet = terra.wallet(gcpHsmKey);
 
 	console.log(`GCP HSM wallet addr: ${gcpHsmWallet.key.accAddress}`);	
 }
 
-sendLuna();
+printPubkey();
