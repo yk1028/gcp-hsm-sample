@@ -43,8 +43,6 @@ const sendToMnemonic = async () => {
 		mnemonicWallet.key.accAddress,
 		"1uluna"
 	);
-
-	console.log(mnemonicKey.valAddress);
 	
 	try {
 		const tx = await gcpHsmWallet.createAndSignTx({

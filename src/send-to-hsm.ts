@@ -44,9 +44,6 @@ const sendToHsm = async () => {
 		"1000000uluna"
 	);
 
-	console.log(mnemonicKey.valAddress);
-	
-
 	try {
 		const tx = await mnemonicWallet.createAndSignTx({
 			msgs: [send],
