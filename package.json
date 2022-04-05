@@ -1,0 +1,25 @@
+{
+  "name": "gcp-hsm-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yk1028/gcp-hsm-sample.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yk1028/gcp-hsm-sample/issues"
+  },
+  "homepage": "https://github.com/yk1028/gcp-hsm-sample#readme",
+  "dependencies": {
+    "@google-cloud/kms": "^2.11.0",
+    "@terra-money/terra.js": "^3.0.9",
+    "asn1.js": "^5.4.1",
+    "key-encoder": "^2.0.3"
+  }
+}
