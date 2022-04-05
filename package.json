@@ -20,6 +20,7 @@
     "@google-cloud/kms": "^2.11.0",
     "@terra-money/terra.js": "^3.0.9",
     "asn1.js": "^5.4.1",
-    "key-encoder": "^2.0.3"
+    "key-encoder": "^2.0.3",
+    "ts-node": "^10.7.0"
   }
 }
