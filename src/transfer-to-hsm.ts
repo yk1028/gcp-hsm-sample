@@ -11,7 +11,7 @@ const terra = new LCDClient({
 	gasPrices: { uluna: 0.01133 }
 });
 
-const sendToHsm = async () => {
+const transferToHsm = async () => {
 	const mnemonicKey = new MnemonicKey({
 		mnemonic: keyInfo.mnemonic
 	})
@@ -58,4 +58,4 @@ const sendToHsm = async () => {
 	}
 }
 
-sendToHsm();
+transferToHsm();
