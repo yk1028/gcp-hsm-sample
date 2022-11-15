@@ -1,5 +1,5 @@
 # gcp hsm sample
-- google cloud platform의 key management service에서 제공하는 hsm 방식의 key를 활용해 terra-classic과 xpla의 wallet으로 활용하는 sample code.
+> google cloud platform의 key management service에서 제공하는 hsm 방식의 key를 활용해 terra-classic과 xpla의 wallet으로 활용하는 sample code.
 
 ## gcp kms key create options
 - 보호 수준 : hsm
