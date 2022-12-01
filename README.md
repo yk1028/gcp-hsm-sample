@@ -7,7 +7,7 @@
 - 알고리즘 타원 곡선 secp256k1 - SHA256 다이제스트
 
 ## terra-classic vs xpla
-- `xpla`에서는 `terra-classic`과 다르게 `ethsepc256k1` 방식을 사용하기 때문에 `GcpHsmKey.ts`에서 digest 생성 방식이 다르다.
+> `xpla`에서는 `terra-classic`과 다르게 `ethsepc256k1` 방식을 사용하기 때문에 `GcpHsmKey.ts`에서 digest 생성 방식이 다르다.
 
 ## .key-info.json example
 - key 정보를 숨기기 위해 `.gitignore`에 추가해 숨긴 파일
