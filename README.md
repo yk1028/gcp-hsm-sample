@@ -4,7 +4,7 @@
 ## gcp kms key create options
 - 보호 수준 : hsm
 - 용도 : 비대칭 서명
-- 알고리즘 타원 곡선 secp256k1 - SHA256 다이제스트
+- 알고리즘 : 타원 곡선 secp256k1 - SHA256 다이제스트
 
 ## terra-classic vs xpla
 > `xpla`에서는 `terra-classic`과 다르게 `ethsepc256k1` 방식을 사용하기 때문에 `GcpHsmKey.ts`에서 digest 생성 방식이 다르다.
