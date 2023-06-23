@@ -11,7 +11,9 @@ const printPubkey = async () => {
 	const gcpHsmKey: Key = new GcpHsmKey(gcpHsmUtils, pubkey);
 	const gcpHsmWallet = xpla.wallet(gcpHsmKey);
 
-	console.log(`GCP HSM wallet addr: ${gcpHsmWallet.key.accAddress}`);
+	console.log(`Version Name: \n\t ${gcpHsmWallet.key.accAddress}`)
+
+	console.log(`GCP HSM wallet address: \n\t ${gcpHsmWallet.key.accAddress}`);
 }
 
 printPubkey();
