@@ -29,7 +29,6 @@
 ## gcp service account
 - 방법1 - sample code는 gcp의 key의 접근 권한(`roles/cloudkms.admin`, `roles/cloudkms.signerVerifier`)이 있는 service account가 등록된 vm instance에서 실행되고 있다는 전재하에 정상 동작합니다.
 
-
 - 방법2 - 다른 방법으로는 gcp의 key의 접근 권한이 있는 service account key file을 활용해 아래와 같이 접근하는 방법이 있습니다.
 ``` ts 
 const kms = new KeyManagementServiceClient({ keyFile: './service-account.json' });
