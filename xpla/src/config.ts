@@ -3,9 +3,15 @@ import { LCDClient, MnemonicKey } from "@xpla/xpla.js";
 
 import * as keyInfo from '../.key-info.json';
 
-export const xpla = new LCDClient({
+export const xpla_testnet = new LCDClient({
 	chainID: 'cube_47-5',
-    URL: 'http://34.64.165.123:1317',
+    URL: 'https://cube-lcd.xpla.dev',
+    gasPrices: "850000000000axpla"
+});
+
+export const xpla_mainnet = new LCDClient({
+	chainID: 'dimension_37-1',
+    URL: 'https://dimension-lcd.xpla.dev',
     gasPrices: "850000000000axpla"
 });
 

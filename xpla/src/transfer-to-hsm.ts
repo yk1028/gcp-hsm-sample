@@ -2,7 +2,7 @@ import { Key, MsgSend } from '@xpla/xpla.js';
 import { GcpHsmKey } from './hsm/GcpHsmKey';
 import { GcpHsmSigner } from './hsm/GcpHsmSigner';
 
-import { kms, mnemonicKey, versionName, xpla } from './config';
+import { kms, mnemonicKey, versionName, xpla_testnet } from './config';
 
 const transferToHsm = async () => {
 
@@ -14,8 +14,8 @@ const transferToHsm = async () => {
 	console.log(mnemonicKey.publicKey);
 	console.log(gcpHsmKey.publicKey);
 
-	const mnemonicWallet = xpla.wallet(mnemonicKey);
-	const gcpHsmWallet = xpla.wallet(gcpHsmKey);
+	const mnemonicWallet = xpla_testnet.wallet(mnemonicKey);
+	const gcpHsmWallet = xpla_testnet.wallet(gcpHsmKey);
 
 	console.log("mnemonic wallet addr = ", mnemonicWallet.key.accAddress);
 	console.log("GCP HSM wallet addr = ", gcpHsmWallet.key.accAddress);
@@ -32,7 +32,7 @@ const transferToHsm = async () => {
 			memo: 'mnemonic send test',
 		})
 
-		const result = await xpla.tx.broadcast(tx);
+		const result = await xpla_testnet.tx.broadcast(tx);
 
 		console.log("+++ result: ", result);
 	} catch (err) {

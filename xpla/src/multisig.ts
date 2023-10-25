@@ -2,7 +2,7 @@ import { LCDClient, Key, MsgSend, SimplePublicKey, LegacyAminoMultisigPublicKey,
 import { GcpHsmKey } from './hsm/GcpHsmKey';
 import { GcpHsmSigner } from './hsm/GcpHsmSigner';
 
-import { kms, mnemonicKey, versionName, xpla } from './config';
+import { kms, mnemonicKey, versionName, xpla_testnet } from './config';
 
 const signature = async (key: Key, client: LCDClient, accInfo: Account, tx: Tx) => {
     return await key.createSignatureAmino(
@@ -38,8 +38,8 @@ const multisig = async () => {
         { uluna: 1 }
     );
 
-    const accInfo = await xpla.auth.accountInfo(address);
-    const tx = await xpla.tx.create(
+    const accInfo = await xpla_testnet.auth.accountInfo(address);
+    const tx = await xpla_testnet.tx.create(
         [
             {
                 address,
@@ -54,10 +54,10 @@ const multisig = async () => {
     );
 
     // project 1
-    const sig1 = await signature(mnemonicKey, xpla, accInfo, tx);
+    const sig1 = await signature(mnemonicKey, xpla_testnet, accInfo, tx);
 
     // project 2
-    const sig2 = await signature(gcpHsmKey, xpla, accInfo, tx);
+    const sig2 = await signature(gcpHsmKey, xpla_testnet, accInfo, tx);
 
     multisig.appendSignatureV2s([sig1, sig2]);
 
@@ -70,7 +70,7 @@ const multisig = async () => {
     ]);
 
     console.log(JSON.stringify(tx.toData()));
-    xpla.tx.broadcast(tx).then(console.log);
+    xpla_testnet.tx.broadcast(tx).then(console.log);
 }
 
 multisig();
